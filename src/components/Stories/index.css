@@ -1,0 +1,15 @@
+.Stories {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  overflow-x: scroll;
+  padding: 12px 0;
+  scrollbar-width: none;
+}
+
+.Stories::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
