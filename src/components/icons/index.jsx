@@ -10,6 +10,10 @@ import SaveIcon from "../../assets/icons/SaveIcon";
 import HomeIcon from "../../assets/icons/HomeIcon";
 import SearchIcon from "../../assets/icons/SearchIcon";
 import NewPostIcon from "../../assets/icons/NewPostIcon";
+import LikeIconActive from "../../assets/icons/LikeIconActive";
+import BackIcon from "../../assets/icons/BackIcon";
+import PlusIcon from "../../assets/icons/PlusIcon";
+import DownArrowIcon from "../../assets/icons/DownArrowIcon";
 
 export {
   CameraIcon,
@@ -24,4 +28,8 @@ export {
   HomeIcon,
   SearchIcon,
   NewPostIcon,
+  LikeIconActive,
+  BackIcon,
+  PlusIcon,
+  DownArrowIcon,
 };

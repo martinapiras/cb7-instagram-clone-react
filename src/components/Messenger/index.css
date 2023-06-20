@@ -1,0 +1,69 @@
+.Messenger {
+  display: flex;
+  flex-direction: column;
+  align-items: safe center;
+  justify-content: center;
+  width: 100vw;
+  padding: 7px;
+}
+
+.Messenger__topbar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Messenger__topbar--user {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.Messenger__topbar--user p {
+  font-weight: bold;
+}
+
+.Messenger__search {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Messenger__search input {
+  width: 95%;
+  background-color: rgba(118, 118, 128, 0.12);
+  border-radius: 10px;
+  border: none;
+  height: 36px;
+  position: relative;
+}
+
+.Messenger__search::after {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  content: "Search";
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3c3c4399;
+}
+
+.Messenger__search--icon {
+  position: absolute;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 20px;
+}
+
+.Messenger__search--icon svg {
+  transform: scale(0.8);
+  fill: #3c3c4399;
+}

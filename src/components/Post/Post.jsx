@@ -9,16 +9,15 @@ import {
 } from "../icons";
 
 const Post = ({ data }) => {
-  console.log(data);
   return (
-    <div className="Post">
+    <article className="Post">
       <div className="Post__Top">
         <div className="Post__Top-userInfo">
           <img src={data.userImg} alt={data.username} />
           <div className="userInfo__text">
             <div className="username">
               {data.username}
-              {/* {data.isVerified && <VerifiedIcon />} */}
+              {data.isVerified && <VerifiedIcon />}
             </div>
             <p className="location">{data.location}</p>
           </div>
@@ -49,7 +48,7 @@ const Post = ({ data }) => {
           <span>{data.username}</span> <span>{data.description}</span>
         </p>
       </div>
-    </div>
+    </article>
   );
 };
 
