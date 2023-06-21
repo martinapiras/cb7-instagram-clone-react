@@ -7,8 +7,39 @@ import {
   CameraIcon,
 } from "../icons";
 import Chat from "../Chat";
+import { useState } from "react";
 
 const Messenger = ({ user, setSection, stories }) => {
+  const [chatName, setChatName] = useState("");
+
+  /////////////// WIP ///////////////
+  const onChatRendering = () => {
+    switch (chatName) {
+      case "":
+        return stories.map((story) => (
+          <Chat data={story} key={story.id}></Chat>
+        ));
+
+      case "karennne":
+        return <h1>karennne</h1>;
+
+      case "zackjohn":
+        return <h1>zackjohn</h1>;
+
+      case "kieron_d":
+        return <h1>kieron_d</h1>;
+
+      case "craig":
+        return <h1>craig</h1>;
+
+      case "jakob":
+        return <h1>jakob</h1>;
+
+      case "juan":
+        return <h1>juan</h1>;
+    }
+  };
+
   return (
     <div className="Messenger">
       <div className="Messenger__topbar">
@@ -32,11 +63,15 @@ const Messenger = ({ user, setSection, stories }) => {
         </div>
         <input type="text" placeholder="Search" />
       </div>
-      {stories.map((story) => (
+
+      {/* {stories.map((story) => (
         <Chat data={story} key={story.id}></Chat>
-      ))}
+      ))} */}
+
+      {onChatRendering()}
+
       <div className="Messenger__camera">
-        <CameraIcon></CameraIcon>
+        <CameraIcon fill="#262626"></CameraIcon>
         <p>Camera</p>
       </div>
     </div>

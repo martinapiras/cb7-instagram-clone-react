@@ -8,7 +8,7 @@ const Topbar = ({ setSection }) => {
     <div className="Topbar">
       <div className="Topbar__nav">
         <div className="Topbar__Camera" onClick={() => onHandleClick("camera")}>
-          <CameraIcon></CameraIcon>
+          <CameraIcon fill="#262626"></CameraIcon>
         </div>
         <div className="Topbar__Logo" onClick={() => onHandleClick("home")}>
           <LogoIcon></LogoIcon>

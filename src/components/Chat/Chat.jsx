@@ -12,12 +12,16 @@ const Chat = ({ data }) => {
       <div className="Chat__textContent">
         <div className="Chat__textContent--content">
           <div className="Chat__textContent--username">{data.username}</div>
-          <div className="Chat__textContent--message">{data.message}</div>
+          <div className="Chat__textContent--message">
+            {data.messages[data.messages.length - 1].content}
+          </div>
         </div>
-        <div className="Chat__textContent--time">now</div>
+        <div className="Chat__textContent--time">
+          {data.last_message_timestamp}
+        </div>
       </div>
       <div className="Chat__camera">
-        <CameraIcon></CameraIcon>
+        <CameraIcon fill="#00000066"></CameraIcon>
       </div>
     </div>
   );

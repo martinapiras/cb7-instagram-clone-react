@@ -22,9 +22,12 @@ function App() {
 
   // STORIES DATA
   useEffect(() => {
-    fetch("https://api.npoint.io/c517fae092edf12403ea")
+    fetch("https://api.npoint.io/580adfbbde89108c8ab7")
       .then((res) => res.json())
-      .then((data) => setStories(data));
+      .then((data) => {
+        setStories(data);
+        console.log(data);
+      });
   }, []);
 
   // POSTS DATA
@@ -57,7 +60,7 @@ function App() {
         return (
           <>
             <Topbar setSection={setSection}></Topbar>
-            <h1>IGTV</h1>;
+            <h1>IGTV</h1>
           </>
         );
 
