@@ -8,7 +8,7 @@ const TabBar = ({ user, setSection }) => {
         <HomeIcon></HomeIcon>
       </div>
       <div className="tab" onClick={() => setSection("search")}>
-        <SearchIcon></SearchIcon>
+        <SearchIcon fill="#262626"></SearchIcon>
       </div>
       <div className="tab" onClick={() => setSection("new")}>
         <NewPostIcon></NewPostIcon>

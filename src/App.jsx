@@ -62,7 +62,9 @@ function App() {
         );
 
       case "msg":
-        return <Messenger user={user} setSection={setSection} />;
+        return (
+          <Messenger user={user} setSection={setSection} stories={stories} />
+        );
 
       case "search":
         return (
