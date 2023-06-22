@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { filtersData } from "../../mocks/filters";
 import "./index.css";
 
@@ -11,15 +11,15 @@ const Camera = () => {
   // WIP //
   const [filterState, setFilterState] = useState("");
 
+  const videoRef = useRef(null);
+
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia(constraints)
       .then((mediaStream) => {
-        const video = document.querySelector("video");
-
-        video.srcObject = mediaStream;
-        video.onloadedmetadata = () => {
-          video.play();
+        videoRef.current.srcObject = mediaStream;
+        videoRef.current.onloadedmetadata = () => {
+          videoRef.current.play();
         };
       })
       .catch((err) => {
@@ -33,8 +33,8 @@ const Camera = () => {
 
   return (
     <>
-      <video className={`Camera ${filterState}`}></video>
-      <div className="Camera__filters">
+      <video ref={videoRef} className={`Camera ${filterState}`}></video>
+      {/* <div className="Camera__filters">
         <ul>
           {filtersData?.map((filter) => (
             <li
@@ -45,7 +45,7 @@ const Camera = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };

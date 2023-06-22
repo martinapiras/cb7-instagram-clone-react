@@ -1,55 +1,74 @@
 .Chat {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Chat__topBar {
+  width: 100%;
+  border: 1px solid purple;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 72px;
-  padding: 8px 16px;
+  padding: 10px;
 }
 
-.Chat__userImg img {
-  width: 56px;
-  height: 56px;
+.Chat__topBar--back {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Chat__topBar--userSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 70%;
+}
+
+.Chat__topBar--userImg img {
+  width: 36px;
+  height: 36px;
   border-radius: 100%;
 }
 
-.Chat__textContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: ce;
-  width: 70%;
-  padding: 4px 8px;
-  height: 72px;
+.userInfo--firstName {
+  font-weight: bold;
 }
 
-.Chat__textContent--content {
-  width: 85%;
+.userInfo--username {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.Chat__topBar--actions {
+  width: 20%;
+}
+
+.Chat__messages {
+  height: 80%;
+  width: 100%;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px;
 }
 
-.Chat__textContent--message {
-  width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  color: rgba(0, 0, 0, 0.4);
+.Chat__message {
+  width: fit-content;
+  max-width: 70%;
+  padding: 8px;
+  background-color: #efefef;
+  border-radius: 20px;
 }
 
-.Chat__textContent--time {
-  width: 10%;
-  color: rgba(0, 0, 0, 0.4);
-  align-self: flex-end;
-  position: relative;
-  bottom: 0.7rem;
-}
-
-.Chat__textContent--time::before {
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  content: "·";
-  color: rgba(0, 0, 0, 0.4);
-  left: -8px;
+.Chat__message.otherUser {
+  align-self: flex-start;
+  background-color: transparent;
+  border: 1px solid #efefef;
 }

@@ -6,76 +6,74 @@ import {
   SearchIcon,
   CameraIcon,
 } from "../icons";
+import ChatList from "../ChatList";
 import Chat from "../Chat";
 import { useState } from "react";
 
 const Messenger = ({ user, setSection, stories }) => {
   const [chatName, setChatName] = useState("");
 
-  /////////////// WIP ///////////////
   const onChatRendering = () => {
     switch (chatName) {
       case "":
-        return stories.map((story) => (
-          <Chat data={story} key={story.id}></Chat>
-        ));
+        return (
+          <>
+            <div className="Messenger__topbar">
+              <div
+                className="Messenger__topbar--back"
+                onClick={() => setSection("home")}
+              >
+                <BackIcon></BackIcon>
+              </div>
+              <div className="Messenger__topbar--user">
+                <p>{user.username}</p>
+                <DownArrowIcon></DownArrowIcon>
+              </div>
+              <div className="Messenger__topbar--more">
+                <PlusIcon></PlusIcon>
+              </div>
+            </div>
+            <div className="Messenger__search">
+              <div className="Messenger__search--icon">
+                <SearchIcon fill="#3c3c4399"></SearchIcon>
+              </div>
+              <input type="text" placeholder="Search" />
+            </div>
+            {stories.map((story) => (
+              <ChatList
+                data={story}
+                key={story.id}
+                setChatName={setChatName}
+              ></ChatList>
+            ))}
+            <div className="Messenger__camera">
+              <CameraIcon fill="#262626"></CameraIcon>
+              <p>Camera</p>
+            </div>
+          </>
+        );
 
       case "karennne":
-        return <h1>karennne</h1>;
+        return <Chat data={stories[0]} setChatName={setChatName}></Chat>;
 
       case "zackjohn":
-        return <h1>zackjohn</h1>;
+        return <Chat data={stories[1]} setChatName={setChatName}></Chat>;
 
       case "kieron_d":
-        return <h1>kieron_d</h1>;
+        return <Chat data={stories[2]} setChatName={setChatName}></Chat>;
 
       case "craig":
-        return <h1>craig</h1>;
+        return <Chat data={stories[3]} setChatName={setChatName}></Chat>;
 
       case "jakob":
-        return <h1>jakob</h1>;
+        return <Chat data={stories[4]} setChatName={setChatName}></Chat>;
 
       case "juan":
-        return <h1>juan</h1>;
+        return <Chat data={stories[5]} setChatName={setChatName}></Chat>;
     }
   };
 
-  return (
-    <div className="Messenger">
-      <div className="Messenger__topbar">
-        <div
-          className="Messenger__topbar--back"
-          onClick={() => setSection("home")}
-        >
-          <BackIcon></BackIcon>
-        </div>
-        <div className="Messenger__topbar--user">
-          <p>{user.username}</p>
-          <DownArrowIcon></DownArrowIcon>
-        </div>
-        <div className="Messenger__topbar--more">
-          <PlusIcon></PlusIcon>
-        </div>
-      </div>
-      <div className="Messenger__search">
-        <div className="Messenger__search--icon">
-          <SearchIcon fill="#3c3c4399"></SearchIcon>
-        </div>
-        <input type="text" placeholder="Search" />
-      </div>
-
-      {/* {stories.map((story) => (
-        <Chat data={story} key={story.id}></Chat>
-      ))} */}
-
-      {onChatRendering()}
-
-      <div className="Messenger__camera">
-        <CameraIcon fill="#262626"></CameraIcon>
-        <p>Camera</p>
-      </div>
-    </div>
-  );
+  return <div className="Messenger">{onChatRendering()}</div>;
 };
 
 export default Messenger;

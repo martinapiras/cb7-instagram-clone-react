@@ -6,35 +6,27 @@ import Posts from "./components/Posts";
 import TabBar from "./components/TabBar";
 import Camera from "./components/Camera";
 import Messenger from "./components/Messenger";
+import { GET } from "./utils/HTTP";
 
 function App() {
   const [user, setUser] = useState({});
   const [stories, setStories] = useState([]);
   const [posts, setPosts] = useState([]);
   const [section, setSection] = useState("home");
+  // const [isLoading, setLoading] = useState(false);
+  // ^ cambiare useState nel then con la conversione di res in res.json()
 
-  // USER DATA
   useEffect(() => {
-    fetch("https://api.npoint.io/03d220efc95662e81cc6")
-      .then((res) => res.json())
-      .then((data) => setUser(data));
-  }, []);
-
-  // STORIES DATA
-  useEffect(() => {
-    fetch("https://api.npoint.io/580adfbbde89108c8ab7")
-      .then((res) => res.json())
-      .then((data) => {
-        setStories(data);
-        console.log(data);
-      });
-  }, []);
-
-  // POSTS DATA
-  useEffect(() => {
-    fetch("https://api.npoint.io/576f295cb0c89a62dee5")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
+    const fetchedData = Promise.all([
+      GET("https://api.npoint.io/03d220efc95662e81cc6"), // USER
+      GET("https://api.npoint.io/580adfbbde89108c8ab7"), // STORIES
+      GET("https://api.npoint.io/576f295cb0c89a62dee5"), // POSTS
+    ]).then((fetchedData) => {
+      const [userData, storiesData, postsData] = fetchedData;
+      setUser(userData);
+      setStories(storiesData);
+      setPosts(postsData);
+    });
   }, []);
 
   const onSectionRender = () => {
@@ -48,6 +40,7 @@ function App() {
             <TabBar user={user} setSection={setSection}></TabBar>
           </>
         );
+
       case "camera":
         return (
           <>
