@@ -5,6 +5,7 @@ import {
   PlusIcon,
   SearchIcon,
   CameraIcon,
+  ColoredCameraIcon,
 } from "../icons";
 import ChatList from "../ChatList";
 import Chat from "../Chat";
@@ -47,7 +48,7 @@ const Messenger = ({ user, setSection, stories }) => {
               ></ChatList>
             ))}
             <div className="Messenger__camera">
-              <CameraIcon fill="#262626"></CameraIcon>
+              <ColoredCameraIcon />
               <p>Camera</p>
             </div>
           </>

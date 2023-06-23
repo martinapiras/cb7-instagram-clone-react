@@ -1,0 +1,97 @@
+.StoryModal {
+  opacity: 0;
+  background-color: #000000c7;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.StoryModal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.StoryModal .swiper-pagination-progressbar {
+  background-color: #ffffff5a;
+}
+
+.StoryModal .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: white;
+}
+
+.StoryModal .swiper-button-next,
+.StoryModal .swiper-button-prev {
+  height: 100vh;
+  color: transparent;
+  transform: translateY(-50%);
+}
+
+.StoryModal .swiper-button-next {
+  right: 0;
+}
+
+.StoryModal .swiper-button-prev {
+  left: 0;
+}
+
+.StoryModal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 8px #0000007c;
+  transform: scale(2);
+  transition: all 0.35s;
+  cursor: pointer;
+}
+
+.StoryModal__close:active {
+  transform: scale(3);
+}
+
+.StoryModal__user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 50px;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  padding: 5px;
+}
+
+.StoryModal__user--img img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+
+.StoryModal__user--username {
+  font-weight: bold;
+}
+
+.StoryModal__story {
+  width: 100%;
+  height: 100vh;
+}
+
+.StoryModal__story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 20;
+}

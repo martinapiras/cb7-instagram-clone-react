@@ -1,8 +1,9 @@
 .Camera {
-  position: relative;
-  top: 6px;
-  width: 100vw;
-  height: calc(100vh - 56px);
+  width: 100%;
+  margin-top: 50px;
+  height: calc(100vh - 40px);
+  object-fit: cover;
+  transform: rotateY(180deg);
 }
 
 .Camera__filters {
@@ -12,7 +13,7 @@
   height: 60px;
 }
 
-.Camera__filters ul {
+.Camera__filters--filtersList {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,24 +23,34 @@
   padding: 0;
 }
 
-.Camera__filters ul li {
-  border: 2px solid;
+.filter {
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  background-color: grey;
+  overflow: hidden;
+  background-image: url("https://picsum.photos/200");
+  background-position: center;
   cursor: pointer;
   font-weight: bold;
+  border: 2px dotted;
 }
 
 .one {
   filter: contrast(2.2) saturate(4) sepia(0.4);
 }
 
-.twp {
+.two {
   filter: grayscale(1);
 }
 
 .three {
   filter: invert(1);
+}
+
+.four {
+  filter: blur(10px);
+}
+
+.five {
+  filter: saturate(250%);
 }

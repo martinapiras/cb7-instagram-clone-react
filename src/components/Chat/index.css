@@ -3,12 +3,20 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+}
+
+.Chat__topBarWrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #fefefe;
+  position: fixed;
+  top: 0;
 }
 
 .Chat__topBar {
+  height: 100%;
   width: 100%;
-  border: 1px solid purple;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,15 +48,20 @@
 }
 
 .userInfo--username {
-  color: rgba(0, 0, 0, 0.4);
+  color: #00000066;
 }
 
 .Chat__topBar--actions {
   width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
 }
 
 .Chat__messages {
-  height: 80%;
+  margin: 50px 0;
+  height: calc(100% - 100px);
   width: 100%;
   overflow-y: auto;
   display: flex;
@@ -71,4 +84,39 @@
   align-self: flex-start;
   background-color: transparent;
   border: 1px solid #efefef;
+}
+
+.Chat__newMessageWrapper {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+}
+
+.Chat__newMessage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.Chat__newMessage--camera {
+  position: absolute;
+  left: 20px;
+}
+
+.Chat__newMessage--input {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #e3e3e3;
+  padding: 5px 10px 5px 55px;
+}
+
+.Chat__newMessage--input:focus {
+  border: 1px solid #00000066;
+  outline: none;
 }

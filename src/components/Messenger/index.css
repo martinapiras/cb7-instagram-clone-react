@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .Messenger__topbar--user {
@@ -76,4 +77,19 @@
 
 .Messenger__search--icon svg {
   transform: scale(0.8);
+}
+
+.Messenger__camera {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.Messenger__camera p {
+  color: #3897f0;
 }

@@ -1,8 +1,12 @@
 import "./index.css";
 
-const Story = ({ data }) => {
+const Story = ({ data, openStoryModal, index }) => {
   return (
-    <li key={data.id} className="Story">
+    <li
+      key={data.id}
+      className="Story"
+      onClick={() => openStoryModal({ index })}
+    >
       <div className="Story__Image">
         <div className="Story__Image-wrapper">
           <img src={data.userImg} alt={data.username} />

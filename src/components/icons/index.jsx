@@ -14,6 +14,10 @@ import LikeIconActive from "../../assets/icons/LikeIconActive";
 import BackIcon from "../../assets/icons/BackIcon";
 import PlusIcon from "../../assets/icons/PlusIcon";
 import DownArrowIcon from "../../assets/icons/DownArrowIcon";
+import VoiceCallIcon from "../../assets/icons/VoiceCallIcon";
+import VideoCallIcon from "../../assets/icons/VideoCallIcon";
+import ColoredCameraIcon from "../../assets/icons/ColoredCameraIcon";
+import SavedPostIcon from "../../assets/icons/SavedPostIcon";
 
 export {
   CameraIcon,
@@ -32,4 +36,8 @@ export {
   BackIcon,
   PlusIcon,
   DownArrowIcon,
+  VoiceCallIcon,
+  VideoCallIcon,
+  ColoredCameraIcon,
+  SavedPostIcon,
 };

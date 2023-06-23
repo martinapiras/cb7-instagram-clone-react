@@ -76,3 +76,12 @@
 .Post__Bottom-description span:first-child {
   font-weight: bold;
 }
+
+.Post__Content .swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.Post__Content .swiper-pagination-bullet-active-next,
+.Post__Content .swiper-pagination-bullet-active-prev {
+  background-color: rgba(255, 255, 255, 0.9);
+}

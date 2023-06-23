@@ -13,8 +13,6 @@ function App() {
   const [stories, setStories] = useState([]);
   const [posts, setPosts] = useState([]);
   const [section, setSection] = useState("home");
-  // const [isLoading, setLoading] = useState(false);
-  // ^ cambiare useState nel then con la conversione di res in res.json()
 
   useEffect(() => {
     const fetchedData = Promise.all([

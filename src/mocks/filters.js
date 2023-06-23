@@ -5,7 +5,7 @@ export const filtersData = [
   },
   {
     id: 2,
-    name: "twp",
+    name: "two",
   },
   {
     id: 3,
