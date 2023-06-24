@@ -12,18 +12,17 @@ const Stories = ({ user, stories }) => {
     setIsModalOpen(true);
   };
 
+  useEffect(
+    (startingStory) => {
+      setStartingStory(startingStory !== false ? startingStory : false);
+    },
+    [startingStory]
+  );
+
   const closeStoryModal = () => {
     setStartingStory(false);
     setIsModalOpen(false);
   };
-
-  useEffect(() => {
-    setStartingStory(startingStory !== false ? startingStory : false);
-  });
-
-  // const toggleStoryModal = () => {
-  //   setIsModalOpen(!isModalOpen);
-  // };
 
   return (
     <ul className="Stories">
@@ -33,7 +32,7 @@ const Stories = ({ user, stories }) => {
           <Story
             data={story}
             key={story.id}
-            index={startingStory}
+            index={index}
             openStoryModal={openStoryModal}
           ></Story>
         ))}

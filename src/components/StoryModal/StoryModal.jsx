@@ -20,7 +20,7 @@ const StoryModal = ({ stories, isOpen, closeStoryModal, index }) => {
         <div className="StoryModal__close" onClick={closeStoryModal}>
           x
         </div>
-        <Swiper>
+        <Swiper initialSlide={index}>
           {stories?.map((userStories) => (
             <SwiperSlide>
               <div className="StoryModal__user" key={userStories.id}>

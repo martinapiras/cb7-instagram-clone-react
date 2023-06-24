@@ -80,8 +80,19 @@ const Post = ({ data }) => {
           </div>
         </div>
         <p className="Post__Bottom-likes">
-          Liked by <span>{data.likes.featuredLike.username}</span> and{" "}
-          <span>{data.likes.likesNumber} others</span>
+          Liked by{" "}
+          {isLiked ? (
+            <span>you</span>
+          ) : (
+            <span>{data.likes.featuredLike.username}</span>
+          )}{" "}
+          and{" "}
+          {isLiked ? (
+            <span>{data.likes.likesNumber + 1}</span>
+          ) : (
+            <span>{data.likes.likesNumber}</span>
+          )}
+          <span> others</span>
         </p>
         <p className="Post__Bottom-description">
           <span>{data.username} </span>
